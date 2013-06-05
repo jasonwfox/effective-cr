@@ -57,13 +57,22 @@ abstract class Salesperson
 	public function set_left(Salesperson $person)
 	{
 		$this->left = $person;
+		set_parent($person Salesperson)
+	}
+
+	public function set_parent(Salesperson $person)
+	{
+		$this->parent = $person;
 	}
 
 	/**
 	* @return double a value between 0 and 1 that represents the
 	* rate of success this salesperson has with deals.
 	*/
-	protected abstract function success_rate();
+	protected abstract function success_rate($person);
+	{
+	
+	}
 
 	protected function can_take_lead(Lead $lead)
 	{
@@ -96,7 +105,7 @@ class Sociopath extends Salesperson
 {
 	public function success_rate()
 	{
-		// implement me!
+		return 85
 	}
 
 }
@@ -106,8 +115,15 @@ class Clueless extends Salesperson
 	public function success_rate()
 	{
 		// implement me!
-
+		
 		// tip: use the is_a function
+		$salesperson_type = Salesperson->left
+
+		if is_a(Salesperson, Sociopath)
+			return 65
+		else
+			return 45
+		end
 	}
 }
 
@@ -116,6 +132,11 @@ class Loser extends Salesperson
 	public function success_rate()
 	{
 		// implement me!
+		if is_a(Salesperson, Looser)
+			return 1
+		else
+			return 2
+		end
 	}
 }
 
